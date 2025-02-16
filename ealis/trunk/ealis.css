@@ -1,0 +1,180 @@
+@charset "EUC-JP";
+
+/*
+ *  ealis v3.0  stylesheet
+ *      classic edition  (erialarts) , 02/07/19
+*/
+
+/*■ 全般設定 */
+	body{ 
+		background: #fcfcfc;
+		color: #555555;
+		margin-top:10px;
+	}
+	a:link{ color: #1111bb}
+	a:visited{ color: #7777cc}
+	a:active{ color:#7777cc}
+
+	form{margin-top:10px; padding:0}
+	hr { height:1px }
+	hr.section{ height:1px;}
+	var{ color:#996633; font-style:normal}
+	address{ font: 95% sans-serif; text-align:right}
+	q{ border-bottom:1px solid #393; background-color: #D8F0D8}
+	span.key{ text-decoration:underline}
+
+/*■ ヘッダ部メニュー */
+	h1.main {
+		font:20pt Verdana,sans-serif;
+		color:#8fb5ca;
+		border-bottom:3px double #afbfea;
+	}
+	h1.sub {
+		margin:0 0 10pt 0;
+		background: #afbfea;
+		color:#666699;
+		font-size:13pt;
+	}
+	h2{
+		color:#666699;; font-size:130%;
+		border-bottom:0.3mm solid #afbfea	}
+
+	div.menubox p{
+		position:absolute; top:1em; right:1em;
+		text-align:right; font-size:9pt; white-space:nowrap;
+		z-index:10;
+	}
+	div.menubox hr{ display:none;}
+
+/*■ アナウンスウィンドウ */
+	div.infobox {
+		background:white;
+		border:#ADCBDA 1px solid;
+		margin:0.5em 3%; padding:0;
+	}
+	div.infobox p{
+		margin:0;
+		padding: 0.3em;
+	}
+
+/*■ 各スレッド */
+	div.article {
+		background:white;
+		margin:0.4em auto 0.8em 2%;		/* IEとMozillaで実装が異なる、注意 */
+		width:97%;	/* これを書かないとIEで親アイコンが変 */
+	}
+	ul.article { padding-left:2em}
+
+	/*■ 親記事と返信記事 (div.article以下) */
+		/* 親記事 */
+		h3 { 
+			background:#DBE4ED;
+			font-size:105%; font-weight:normal;
+			margin:1px; padding:2px
+		}
+		h3 span.pageing { float:right }
+		h3 span.atclno{ font-family:Verdana,sans-serif }
+		h3 em { color: #666699; font-weight:bold; font-style:normal} 
+		h3 cite{ color:green }
+		h3 a.web { font-size:9pt }
+		p.msg-oya { padding:0px 30px 1em 4em }
+
+		/* 返信記事 - アイコン無し仕様時 */
+		ul.msg-res { list-style-type:none }
+		ul.msg-res li { padding:2px 1em 2px 1em; text-indent:-2em}
+		table img.ico { float:right; margin:0.5em 0.5em 0.5em 1em}
+
+		/* 返信記事 - アイコン有り仕様時 */
+		table.msg-oya { margin:0.5em auto 4px 1em; }
+		table.msg-res { border-top:1px solid #ADCBDA; margin-left:1em; margin-top:1em; padding-top:10px;}
+		table col.ico{ text-align:left }
+		table col.msg{ vertical-align:top; width:100%; }
+
+		/* 返信記事 - subj仕様時 */
+		h4{ background-color:#DBE4ED; padding:1px; margin:0; font-weight:normal;}
+		h4 em { color: #666699; font-weight:bold; font-style:normal} 
+		p.msg-res{ margin: 5px 1em 3px 7px;}
+
+	/*■ 各記事の投稿データ */
+		cite { font-weight:bold; font-style:normal}
+		span.stamp{ font:7pt italic; color:#2222AA  }
+		span.edtcnt{ font-size:80%; color:#aaa}
+
+	/*■ Thread,Lapseモード */
+		p.msg-each { margin:1px 1em 5px 2em}
+		h3 span.rescnt { font-size:80%}
+
+
+/*■ 投稿フォームについて */
+	/* input枠 */
+	input.in , textarea{
+		border:1px solid #afc0ea;
+		font-size:10pt;
+		clear:both;
+	}
+
+	/* 親記事投稿フォーム（兼その他） */
+	fieldset {
+		margin:1em 5%; padding:3px 1em;
+		white-space:nowrap; clear:both;
+		border:0;
+	}
+	fieldset p{ margin:4px 0px}
+	fieldset legend{ font-size:110%}
+	fieldset legend var{ font:80% italic}
+	fieldset.oyaform table{ border-spacing:0;}  /* cellspacing */
+	fieldset.oyaform table td { padding:1px;} /* cellpadding */
+	fieldset.oyaform table th { text-align:right;}
+	fieldset.findform, fieldset.edtform { 
+		border:1px solid gray;
+		background:#FAFAFC;
+	}
+
+	/* 返信投稿フォーム */
+	form.resform{ text-align:center; clear:both}
+	form.resform table {
+		background:#eeeeee;
+		font-size:9pt;
+		margin:0.5em auto 1em auto;
+		border:1px solid #ADCBDA;
+		border-spacing:0;
+	}
+	form.resform table th {text-align:right; font-weight:normal}
+	form.resform table td { padding:1px;}
+
+	/* 投稿フォーム内のobject */
+	form select option.group{ background:#E6EBF0}
+	form label.requisite { text-decoration:underline}
+	form td.submit { text-align:right }
+	form div.list-colors{ font-size:9pt; white-space:nowrap }
+
+	div.resform { margin:0; clear:both;}
+	div.reslink { text-align:right; font-size:9pt; margin:0; clear:both}
+
+
+/*■ ログページャー,viewセレクタ */
+	div.view-select {
+		letter-spacing:1px
+	}
+	div.log-pager, div.view-select {
+		margin:2px 2px; padding:1px 1em;
+		border-top:1px solid #afbfea;
+		border-bottom:1px solid #afbfea;
+		font:80% Verdana,sans-serif;
+	}
+	div.log-pager em { font-weight:bold; font-style:normal}
+
+	div.log-pager a, div.view-select a { text-decoration:none;}
+
+	span.label{ background-color:#afbfea ;padding:2px; }
+
+/*■ えとせとら */
+	div.valueinput{ text-align:center; margin:0.3em 0em}
+	ol.findresult p{
+		margin-top:0em; margin-bottom:0em;
+		padding:0.2em 2em;
+	}
+	table th { white-space:nowrap }
+	table.preview { width: 96%}
+
+/* end */
